@@ -20,8 +20,8 @@ const sendEmail = async (data, appemail, apppass) => {
   // const transporter = createTrans() with .env
   const { name, email, subject, html } = data
   const info = await transporter.sendMail({
-    from: `${name} ${email}`,
-    to: process.env.EMAIL_USER,
+    from: `${name + ' - ' + email} ${email}`,
+    to: appemail,
     subject: subject,
     html: html,
   })
